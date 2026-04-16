@@ -1,6 +1,24 @@
-﻿/* ══ COMPLETE JAVASCRIPT — FastSave.me Pro Max ══ */
+/* ══ COMPLETE JAVASCRIPT — FastSave.me Pro Max ══ */
 
 'use strict';
+
+/* ── GOOGLE ANALYTICS 4 ────────────────────────────
+   Replace G-XXXXXXXXXX with your actual Measurement ID
+   from https://analytics.google.com
+   ─────────────────────────────────────────────────── */
+(function() {
+  const GA_ID = 'G-XXXXXXXXXX'; // ← REPLACE THIS WITH YOUR REAL ID
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(script);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+})();
+/* ─────────────────────────────────────────────────── */
 
 // ── TOOL DATABASE (for search) ──────────────────
 const TOOLS = [

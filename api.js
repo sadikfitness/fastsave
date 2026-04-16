@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════
    FastSave.me — YouTube Data API v3 Integration
    Real data for: Video Details, Channel Stats,
    Tag Viewer, Thumbnail Downloader, Monetization Check
@@ -197,18 +197,7 @@ function closeApiModal() {
   document.getElementById('apiModal')?.classList.remove('open');
 }
 
-function openApiModal() {
-  const modal = document.getElementById('apiModal');
-  if (modal) {
-    modal.classList.add('open');
-    const input = document.getElementById('apiKeyInput');
-    if (input) input.value = YTAPI.getKey();
-  }
-}
 
-function closeApiModal() {
-  document.getElementById('apiModal')?.classList.remove('open');
-}
 
 /* ─── API REQUIRED GUARD ───────────────────────────── */
 function requireApiKey() {

@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Logo Generator — High Quality Free | FastSave.me</title>
+  <meta name="description" content="Create professional YouTube profile pictures and logos instantly for free. Custom colors, fonts, and styles ready for your channel.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .canvas-card { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    #logoPreview { background: #000; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 100%; height: auto; }
+    .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+    @media (max-width: 600px) { .control-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script src="https://pl27062746.profitablecpmratenetwork.com/d4/ad/50/d4ad5003ca12c7b930a9fe24e843b056.js"></script>
+
+  <!-- ULTRA SEO TAGS BY YTMaster System -->
+  <meta name="keywords" content="logo generator, free youtube logo generator, logo generator tool, fastsave.me, youtube creator tools, seo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://fastsave.me/tools/logo-generator.html">
+  <meta property="og:title" content="YouTube Logo Generator — High Quality Free | FastSave.me" />
+  <meta property="og:description" content="Create professional YouTube profile pictures and logos instantly for free. Custom colors, fonts, and styles ready for your channel." />
+  <meta property="og:url" content="https://fastsave.me/tools/logo-generator.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="YouTube Logo Generator — High Quality Free | FastSave.me" />
+  <meta name="twitter:description" content="Create professional YouTube profile pictures and logos instantly for free. Custom colors, fonts, and styles ready for your channel." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Logo Generator — High Quality Free | FastSave.me",
+    "description": "Create professional YouTube profile pictures and logos instantly for free. Custom colors, fonts, and styles ready for your channel.",
+    "url": "https://fastsave.me/tools/logo-generator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
+  }
+  </script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+<canvas id="particleCanvas"></canvas>
+<div class="cookie-bar" id="cookieBar"><span><i class="ph-fill ph-cookie"></i> We use cookies. <a href="../privacy.html">Learn more</a></span><button onclick="acceptCookies()" class="cookie-btn">Accept</button></div>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-play"><i class="ph-fill ph-play"></i></span><span class="logo-name">Fast<span>Save</span></span><span class="logo-pill">FREE</span></a>
+    <div class="nav-links" id="navLinks"><a href="../index.html" class="nav-a">Home</a><a href="all-tools.html" class="nav-a active">All Tools</a></div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle"><i class="ph-bold ph-moon"></i></button>
+      <a href="../settings.html" class="nav-cta"><i class="ph ph-gear"></i> API Setup</a>
+      <button class="burger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="tool-page">
+  <div class="wrap" style="padding-top:16px;"><div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'ff894ca4adab00e1c9d60672043cfd72','format':'iframe','height':90,'width':728,'params':{}};</script><script src="https://ferocitycandour.com/ff894ca4adab00e1c9d60672043cfd72/invoke.js"></script></div></div>
+  <div class="tool-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="all-tools.html">Tools</a><span>›</span>Logo Generator</div>
+      <h1><i class="ph ph-image"></i> YouTube Logo Generator</h1>
+      <p>Design a stunning profile picture for your YouTube channel in seconds. Full control over text, colors, backgrounds, and icons. Download in high-quality PNG format.</p>
+    </div>
+  </div>
+  <div class="tool-body"><div class="wrap">
+    <div class="ad-container" style="text-align:center;overflow:hidden;margin:10px auto;display:flex;justify-content:center;"><script>atOptions={'key':'37cbcc1c8e581fa41a5a2378c42bc9dd','format':'iframe','height':50,'width':320,'params':{}};</script><script src="https://ferocitycandour.com/37cbcc1c8e581fa41a5a2378c42bc9dd/invoke.js"></script></div><div class="tool-layout">
+    <div>
+      <div class="panel canvas-card">
+        <canvas id="logoPreview" width="800" height="800" style="width: 300px; height: 300px;"></canvas>
+        <div class="control-grid">
+          <div class="fgroup">
+            <label>Logo Text</label>
+            <input type="text" id="logoText" class="finput" value="YT" placeholder="e.g. YT" oninput="drawLogo()">
+          </div>
+          <div class="fgroup">
+            <label>Font Style</label>
+            <select id="logoFont" class="finput" onchange="drawLogo()">
+              <option value="Space Grotesk">Modern (Space Grotesk)</option>
+              <option value="Inter">Clean (Inter)</option>
+              <option value="Arial">Classic (Arial)</option>
+              <option value="serif">Elegant (Serif)</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label>Text Color</label>
+            <input type="color" id="textColor" class="finput" value="#ffffff" oninput="drawLogo()">
+          </div>
+          <div class="fgroup">
+            <label>Background Color</label>
+            <input type="color" id="bgColor" class="finput" value="#8b5cf6" oninput="drawLogo()">
+          </div>
+          <div class="fgroup">
+            <label>Text Size</label>
+            <input type="range" id="textSize" min="100" max="400" value="300" oninput="drawLogo()">
+          </div>
+          <div class="fgroup">
+            <label>Style</label>
+            <select id="logoStyle" class="finput" onchange="drawLogo()">
+              <option value="flat">Flat Color</option>
+              <option value="gradient">Gradient Glow</option>
+              <option value="border">Circular Border</option>
+            </select>
+          </div>
+        </div>
+        <button class="tool-btn" id="downloadLogoBtn" onclick="downloadLogo()">💾 Download 800×800 PNG</button>
+      </div>
+      <div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'6d0d76ff6833a8824379ee7294e57142','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://ferocitycandour.com/6d0d76ff6833a8824379ee7294e57142/invoke.js"></script></div>
+    </div>
+    <div class="sidebar">
+      <div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'6d0d76ff6833a8824379ee7294e57142','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://ferocitycandour.com/6d0d76ff6833a8824379ee7294e57142/invoke.js"></script></div>
+      <div class="related-box">
+        <h3>🔗 Related Tools</h3>
+        <a href="banner-generator.html" class="rel-item"><span class="ri">🖼️</span><span>Banner Generator</span></a>
+        <a href="thumbnail-downloader.html" class="rel-item"><span class="ri">🖼️</span><span>Thumb Downloader</span></a>
+        <a href="niche-finder.html" class="rel-item"><span class="ri">🎯</span><span>Niche Finder</span></a>
+      </div>
+        <div class="related-box" style="margin-top:20px; border: 1px dashed var(--purple); background: rgba(139,92,246,0.05);">
+          <h3 style="color:var(--purple); margin-bottom:12px;"><i class="ph-fill ph-star"></i> Recommended Partners</h3>
+          <a href="https://lkeh.pro/b0ef17" target="_blank" rel="nofollow" class="rel-item" style="background:var(--bg0); border-radius:8px; margin-bottom:8px; padding:10px;">
+            <span class="ri" style="color: #10b981; background:rgba(16,185,129,0.1);"><i class="ph ph-rocket"></i></span>
+            <span style="font-weight:600; font-size:0.9rem; color:var(--t1)">Pro Toolkit Access</span>
+          </a>
+          <a href="https://reffpa.com/L?tag=d_5474093m_97c_&site=5474093&ad=97" target="_blank" rel="nofollow" class="rel-item" style="background:var(--bg0); border-radius:8px; padding:10px;">
+            <span class="ri" style="color: #3b82f6; background:rgba(59,130,246,0.1);"><i class="ph ph-currency-dollar"></i></span>
+            <span style="font-weight:600; font-size:0.9rem; color:var(--t1)">Boost Video Revenue</span>
+          </a>
+        </div>
+    </div>
+  </div></div></div>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="footer-bottom"><p>© 2024 FastSave.me. All rights reserved.</p><div class="fb-links"><a href="https://lkeh.pro/b0ef17" target="_blank" rel="nofollow" style="color:var(--purple);font-weight:600;">💎 Premium Partner</a><a href="https://reffpa.com/L?tag=d_5474093m_97c_&site=5474093&ad=97" target="_blank" rel="nofollow" style="color:var(--green);font-weight:600;">📈 Boost Revenue</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></div></footer>
+<div class="ai-fab" id="aiFab" onclick="toggleAIChat()"><span class="ai-fab-icon"><i class="ph-fill ph-robot"></i></span><span class="ai-fab-pulse"></span></div>
+<div class="ai-chat" id="aiChat"><div class="ai-chat-head"><div class="ai-chat-info"><span class="ai-av">🤖</span><div><strong>FastSave.me AI</strong><span class="ai-status">● Online</span></div></div><button onclick="toggleAIChat()" class="ai-close">✕</button></div><div class="ai-chat-msgs" id="aiMsgs"><div class="ai-msg bot"><span class="ai-av sm">🤖</span><div class="ai-bubble">👋 Need help designing your logo?</div></div></div><div class="ai-chat-input"><div class="ai-input-row"><input type="text" id="aiInput" placeholder="Ask anything…" onkeydown="if(event.key==='Enter')sendAI()"><button onclick="sendAI()" class="ai-send">➤</button></div></div></div>
+<script src="../script.js"></script>
+<script>
+  function drawLogo() {
+    const canvas = document.getElementById('logoPreview');
+    const ctx = canvas.getContext('2d');
+    const text = document.getElementById('logoText').value || 'YT';
+    const font = document.getElementById('logoFont').value;
+    const textColor = document.getElementById('textColor').value;
+    const bgColor = document.getElementById('bgColor').value;
+    const textSize = document.getElementById('textSize').value;
+    const style = document.getElementById('logoStyle').value;
+
+    // Clear and draw background
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    if (style === 'gradient') {
+      const grad = ctx.createRadialGradient(400, 400, 0, 400, 400, 400);
+      grad.addColorStop(0, bgColor);
+      grad.addColorStop(1, '#000');
+      ctx.fillStyle = grad;
+    } else {
+      ctx.fillStyle = bgColor;
+    }
+    
+    ctx.beginPath();
+    ctx.arc(400, 400, 400, 0, Math.PI * 2);
+    ctx.fill();
+
+    if (style === 'border') {
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 20;
+      ctx.beginPath();
+      ctx.arc(400, 400, 380, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Draw text
+    ctx.fillStyle = textColor;
+    ctx.font = `bold ${textSize}px "${font}"`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    // Slight shadow for premium feel
+    ctx.shadowColor = 'rgba(0,0,0,0.5)';
+    ctx.shadowBlur = 15;
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+    
+    ctx.fillText(text, 400, 400);
+    
+    // Reset shadow
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+  }
+
+  function downloadLogo() {
+    const canvas = document.getElementById('logoPreview');
+    const link = document.createElement('a');
+    link.download = 'youtube-logo-FastSave.me.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast('🚀 Logo downloaded successfully!', 'success');
+  }
+
+  window.onload = drawLogo;
+</script>
+</body></html>
+
+
+
+
+

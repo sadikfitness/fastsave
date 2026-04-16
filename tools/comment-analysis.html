@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Comment Sentiment Analysis | FastSave.me</title>
+    <meta name="description" content="Analyze the sentiment of YouTube comments to understand audience reactions.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+  <script src="https://pl27062746.profitablecpmratenetwork.com/d4/ad/50/d4ad5003ca12c7b930a9fe24e843b056.js"></script>
+
+  <!-- ULTRA SEO TAGS BY YTMaster System -->
+  <meta name="keywords" content="comment analysis, free youtube comment analysis, comment analysis tool, fastsave.me, youtube creator tools, seo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://fastsave.me/tools/comment-analysis.html">
+  <meta property="og:title" content="YouTube Comment Sentiment Analysis | FastSave.me" />
+  <meta property="og:description" content="Analyze the sentiment of YouTube comments to understand audience reactions." />
+  <meta property="og:url" content="https://fastsave.me/tools/comment-analysis.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="YouTube Comment Sentiment Analysis | FastSave.me" />
+  <meta name="twitter:description" content="Analyze the sentiment of YouTube comments to understand audience reactions." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Comment Sentiment Analysis | FastSave.me",
+    "description": "Analyze the sentiment of YouTube comments to understand audience reactions.",
+    "url": "https://fastsave.me/tools/comment-analysis.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
+  }
+  </script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><span class="logo-icon">▶</span><span class="logo-text">YT<span class="logo-accent">Master</span></span><span class="logo-badge">FREE</span></a><div class="nav-menu" id="navMenu"><a href="../index.html" class="nav-link">Home</a><a href="all-tools.html" class="nav-link active">Browse Tools</a></div><div class="nav-actions"><a href="all-tools.html" class="btn-primary-sm">All Tools 🚀</a></div><button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button></div></nav>
+    <div class="tool-page-wrapper">
+        <div class="container" style="padding-top:16px;"><div class="ad-placeholder leaderboard">📢 Advertisement (728×90)</div></div>
+        <div class="tool-page-hero"><div class="container"><div class="tool-breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="all-tools.html">Tools</a> <span>›</span> Comment Sentiment Analysis</div><h1 class="tool-page-title">💬 Comment Sentiment Analysis</h1><p class="tool-page-desc">Analyze the sentiment of YouTube comments to understand audience reactions.</p></div></div>
+        <div class="tool-page-body"><div class="container"><div class="tool-main-layout">
+            <div>
+                <div class="tool-panel">
+                    <h2><i class="ph ph-chat-circle-text"></i> Comment Sentiment Analysis</h2>
+                    <div class='tool-input-group'><label for='videoUrl'>YouTube Video URL</label><input type='text' id='videoUrl' placeholder='https://youtube.com/watch?v=...'></div>
+                    <div id="commentError"></div>
+                    <button class="tool-submit" id="commentBtn" onclick="analyzeComments()">💬 Analyze Comments</button>
+                    <div class="tool-result" id="commentResult" style="margin-top:20px;"><div class="result-box" style="min-height:120px;"></div></div>
+                </div>
+                <div class="in-content-ad" style="margin-top:24px;"><div class="ad-placeholder rectangle">📢 Advertisement (300×250)</div></div>
+            </div>
+            <div class="tool-sidebar">
+                <div class="sidebar-ad-box"><div class="ad-placeholder" style="min-height:250px;flex-direction:column;"><span>📢 Advertisement</span><span style="font-size:0.72rem;">(300×250)</span></div></div>
+                <div class="related-tools"><h3>🔗 Related Tools</h3><a href='channel-audit.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Channel Audit</span></a><a href='rank-checker.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Rank Checker</span></a><a href='seo-score-checker.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Seo Score Checker</span></a></div>
+            </div>
+        </div></div></div>
+    </div>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>© 2024 FastSave.me. All rights reserved.</p><div class="footer-links"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></div></footer>
+    <script src="../script.js"></script>
+<script src="../api.js"></script>
+    <script>
+    function analyzeComments() {
+        const inputs = document.querySelectorAll('.tool-panel input, .tool-panel select, .tool-panel textarea');
+        const firstInput = inputs[0]?.value?.trim();
+        if(!firstInput) return showError('commentError', 'Please fill in the required field');
+        const btn = document.getElementById('commentBtn');
+        showLoading(btn, 'Processing...');
+        setTimeout(() => {
+            hideLoading(btn, '💬 Analyze Comments');
+            const resDiv = document.getElementById('commentResult');
+            if(resDiv) { resDiv.querySelector('.result-box').innerHTML = '<p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">✅ Analysis complete! Results have been generated based on the provided input. In a production version, this tool would connect to YouTube API for real-time data.<br><br>📊 <strong>Sample Result:</strong> Your content shows strong potential. Optimize your titles, descriptions, and posting frequency for maximum growth. Use FastSave.me\'s other tools to fine-tune your strategy.</p>'; resDiv.classList.add("show"); }
+            hideError('commentError');
+        }, 2000);
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

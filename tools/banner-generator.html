@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Banner Generator — Channel Art Maker | FastSave.me</title>
+  <meta name="description" content="Create professional YouTube channel banners instantly. Custom templates, text, and styles. Download in perfect 2560x1440 size.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .canvas-card { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    /* Preview window scaled down, actual resolution is 2560x1440 */
+    #bannerPreviewWrap { width: 100%; position: relative; overflow: hidden; background: #111; border-radius: var(--r8); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    #bannerPreview { width: 100%; height: auto; display: block; }
+    .safe-area-overlay { position: absolute; inset: 0; pointer-events: none; border: 1px dashed rgba(255,255,255,0.2); }
+    .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
+    @media (max-width: 600px) { .control-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script src="https://pl27062746.profitablecpmratenetwork.com/d4/ad/50/d4ad5003ca12c7b930a9fe24e843b056.js"></script>
+
+  <!-- ULTRA SEO TAGS BY YTMaster System -->
+  <meta name="keywords" content="banner generator, free youtube banner generator, banner generator tool, fastsave.me, youtube creator tools, seo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://fastsave.me/tools/banner-generator.html">
+  <meta property="og:title" content="YouTube Banner Generator — Channel Art Maker | FastSave.me" />
+  <meta property="og:description" content="Create professional YouTube channel banners instantly. Custom templates, text, and styles. Download in perfect 2560x1440 size." />
+  <meta property="og:url" content="https://fastsave.me/tools/banner-generator.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="YouTube Banner Generator — Channel Art Maker | FastSave.me" />
+  <meta name="twitter:description" content="Create professional YouTube channel banners instantly. Custom templates, text, and styles. Download in perfect 2560x1440 size." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Banner Generator — Channel Art Maker | FastSave.me",
+    "description": "Create professional YouTube channel banners instantly. Custom templates, text, and styles. Download in perfect 2560x1440 size.",
+    "url": "https://fastsave.me/tools/banner-generator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
+  }
+  </script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+<canvas id="particleCanvas"></canvas>
+<div class="cookie-bar" id="cookieBar"><span><i class="ph-fill ph-cookie"></i> We use cookies. <a href="../privacy.html">Learn more</a></span><button onclick="acceptCookies()" class="cookie-btn">Accept</button></div>
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-play"><i class="ph-fill ph-play"></i></span><span class="logo-name">Fast<span>Save</span></span><span class="logo-pill">FREE</span></a>
+    <div class="nav-links" id="navLinks"><a href="../index.html" class="nav-a">Home</a><a href="all-tools.html" class="nav-a active">All Tools</a></div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle"><i class="ph-bold ph-moon"></i></button>
+      <a href="../settings.html" class="nav-cta"><i class="ph ph-gear"></i> API Setup</a>
+      <button class="burger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="tool-page">
+  <div class="wrap" style="padding-top:16px;"><div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'ff894ca4adab00e1c9d60672043cfd72','format':'iframe','height':90,'width':728,'params':{}};</script><script src="https://ferocitycandour.com/ff894ca4adab00e1c9d60672043cfd72/invoke.js"></script></div></div>
+  <div class="tool-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="all-tools.html">Tools</a><span>›</span>Banner Generator</div>
+      <h1><i class="ph ph-image"></i> YouTube Banner Generator</h1>
+      <p>Design a perfect YouTube channel banner in seconds. Includes Safe Zone guides for mobile/desktop. Download in high-quality 2560×1440 PNG format.</p>
+    </div>
+  </div>
+  <div class="tool-body"><div class="wrap">
+    <div class="ad-container" style="text-align:center;overflow:hidden;margin:10px auto;display:flex;justify-content:center;"><script>atOptions={'key':'37cbcc1c8e581fa41a5a2378c42bc9dd','format':'iframe','height':50,'width':320,'params':{}};</script><script src="https://ferocitycandour.com/37cbcc1c8e581fa41a5a2378c42bc9dd/invoke.js"></script></div><div class="tool-layout">
+    <div>
+      <div class="panel canvas-card">
+        <div id="bannerPreviewWrap">
+           <canvas id="bannerPreview" width="2560" height="1440"></canvas>
+           <div class="safe-area-overlay">
+              <div style="position:absolute; top:20%; bottom:20%; left:10%; right:10%; border: 1px dashed rgba(255,255,255,0.4);">
+                 <span style="position:absolute;bottom:4px;right:4px;font-size:10px;color:rgba(255,255,255,0.6)">Safe Area (All Devices)</span>
+              </div>
+           </div>
+        </div>
+        
+        <div class="control-grid">
+          <div class="fgroup">
+            <label>Channel Name</label>
+            <input type="text" id="bTitle" class="finput" value="YOUR CHANNEL" placeholder="Channel Name" oninput="drawBanner()">
+          </div>
+          <div class="fgroup">
+            <label>Subtitle / Slogan</label>
+            <input type="text" id="bSub" class="finput" value="NEW VIDEOS EVERY WEEK" placeholder="Slogan" oninput="drawBanner()">
+          </div>
+          <div class="fgroup">
+            <label>Theme</label>
+            <select id="bTheme" class="finput" onchange="drawBanner()">
+              <option value="gaming">Gaming Neon</option>
+              <option value="minimal">Minimal Tech</option>
+              <option value="lifestyle">Lifestyle Vlog</option>
+              <option value="finance">Finance Growth</option>
+            </select>
+          </div>
+          <div class="fgroup" style="display:flex;align-items:flex-end;">
+            <button class="tool-btn" id="downloadBannerBtn" onclick="downloadBanner()" style="width:100%;">💾 Download 2560×1440</button>
+          </div>
+        </div>
+      </div>
+      <div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'6d0d76ff6833a8824379ee7294e57142','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://ferocitycandour.com/6d0d76ff6833a8824379ee7294e57142/invoke.js"></script></div>
+    </div>
+    <div class="sidebar">
+      <div class="ad-container" style="text-align:center;overflow:hidden;margin:15px auto;display:flex;justify-content:center;"><script>atOptions={'key':'6d0d76ff6833a8824379ee7294e57142','format':'iframe','height':250,'width':300,'params':{}};</script><script src="https://ferocitycandour.com/6d0d76ff6833a8824379ee7294e57142/invoke.js"></script></div>
+      <div class="related-box">
+        <h3>🔗 Related Tools</h3>
+        <a href="logo-generator.html" class="rel-item"><span class="ri">🎨</span><span>Logo Generator</span></a>
+        <a href="thumbnail-downloader.html" class="rel-item"><span class="ri">🖼️</span><span>Thumb Downloader</span></a>
+      </div>
+        <div class="related-box" style="margin-top:20px; border: 1px dashed var(--purple); background: rgba(139,92,246,0.05);">
+          <h3 style="color:var(--purple); margin-bottom:12px;"><i class="ph-fill ph-star"></i> Recommended Partners</h3>
+          <a href="https://lkeh.pro/b0ef17" target="_blank" rel="nofollow" class="rel-item" style="background:var(--bg0); border-radius:8px; margin-bottom:8px; padding:10px;">
+            <span class="ri" style="color: #10b981; background:rgba(16,185,129,0.1);"><i class="ph ph-rocket"></i></span>
+            <span style="font-weight:600; font-size:0.9rem; color:var(--t1)">Pro Toolkit Access</span>
+          </a>
+          <a href="https://reffpa.com/L?tag=d_5474093m_97c_&site=5474093&ad=97" target="_blank" rel="nofollow" class="rel-item" style="background:var(--bg0); border-radius:8px; padding:10px;">
+            <span class="ri" style="color: #3b82f6; background:rgba(59,130,246,0.1);"><i class="ph ph-currency-dollar"></i></span>
+            <span style="font-weight:600; font-size:0.9rem; color:var(--t1)">Boost Video Revenue</span>
+          </a>
+        </div>
+    </div>
+  </div></div></div>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="footer-bottom"><p>© 2024 FastSave.me. All rights reserved.</p><div class="fb-links"><a href="https://lkeh.pro/b0ef17" target="_blank" rel="nofollow" style="color:var(--purple);font-weight:600;">💎 Premium Partner</a><a href="https://reffpa.com/L?tag=d_5474093m_97c_&site=5474093&ad=97" target="_blank" rel="nofollow" style="color:var(--green);font-weight:600;">📈 Boost Revenue</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></div></footer>
+<div class="ai-fab" id="aiFab" onclick="toggleAIChat()"><span class="ai-fab-icon"><i class="ph-fill ph-robot"></i></span><span class="ai-fab-pulse"></span></div>
+<script src="../script.js"></script>
+<script>
+  function drawBanner() {
+    const canvas = document.getElementById('bannerPreview');
+    const ctx = canvas.getContext('2d');
+    const title = document.getElementById('bTitle').value || 'YOUR CHANNEL';
+    const sub = document.getElementById('bSub').value || '';
+    const theme = document.getElementById('bTheme').value;
+
+    const w = canvas.width;
+    const h = canvas.height;
+    
+    // Clear
+    ctx.clearRect(0,0,w,h);
+
+    // Background Themes
+    if (theme === 'gaming') {
+      const grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0, '#0f172a');
+      grad.addColorStop(0.5, '#4c1d95');
+      grad.addColorStop(1, '#0f172a');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,w,h);
+      
+      // Grid lines
+      ctx.strokeStyle = 'rgba(139,92,246, 0.2)';
+      ctx.lineWidth = 2;
+      for(let i=0; i<w; i+=100) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,h); ctx.stroke(); }
+      for(let i=0; i<h; i+=100) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(w,i); ctx.stroke(); }
+    } 
+    else if (theme === 'minimal') {
+      ctx.fillStyle = '#0a0a0a';
+      ctx.fillRect(0,0,w,h);
+      // Abstract circle
+      ctx.fillStyle = '#10b981';
+      ctx.beginPath(); ctx.arc(w/2, h/2, 400, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#111';
+      ctx.beginPath(); ctx.arc(w/2, h/2, 380, 0, Math.PI*2); ctx.fill();
+    }
+    else if (theme === 'lifestyle') {
+      const grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0, '#fdfbfb');
+      grad.addColorStop(1, '#ebedee');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,w,h);
+    }
+    else if (theme === 'finance') {
+      const grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0, '#064e3b');
+      grad.addColorStop(1, '#022c22');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,w,h);
+    }
+
+    // Text common settings
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    // Title
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 10;
+    
+    if (theme === 'gaming' || theme === 'finance') {
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowColor = 'rgba(0,0,0,0.8)';
+    } else if (theme === 'minimal') {
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowColor = 'rgba(0,0,0,0.5)';
+    } else {
+      ctx.fillStyle = '#1f2937';
+      ctx.shadowColor = 'rgba(0,0,0,0.1)';
+    }
+
+    ctx.font = 'bold 200px "Space Grotesk", sans-serif';
+    ctx.fillText(title, w/2, h/2 - 40);
+
+    // Subtitle
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetY = 0;
+    ctx.font = '600 60px "Inter", sans-serif';
+    
+    if (theme === 'gaming') ctx.fillStyle = '#c4b5fd';
+    else if (theme === 'finance') ctx.fillStyle = '#34d399';
+    else if (theme === 'lifestyle') ctx.fillStyle = '#6b7280';
+    else ctx.fillStyle = '#a1a1aa';
+
+    ctx.fillText(sub.toUpperCase(), w/2, h/2 + 120);
+  }
+
+  function downloadBanner() {
+    const canvas = document.getElementById('bannerPreview');
+    const link = document.createElement('a');
+    link.download = 'youtube-banner-FastSave.me.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast('🚀 Banner downloaded successfully!', 'success');
+  }
+
+  window.onload = drawBanner;
+</script>
+</body></html>
+
+
+
+
+

@@ -7,7 +7,7 @@
    from https://analytics.google.com
    ─────────────────────────────────────────────────── */
 (function() {
-  const GA_ID = 'G-XXXXXXXXXX'; // ← REPLACE THIS WITH YOUR REAL ID
+  const GA_ID = 'G-60LB7YXXPC';
   const script = document.createElement('script');
   script.async = true;
   script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;

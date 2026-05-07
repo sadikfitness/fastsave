@@ -247,7 +247,7 @@ function toggleNav() {
 
 // ── THEME ─────────────────────────────────────────
 function initTheme() {
-  const saved = localStorage.getItem('yt-theme') || 'dark';
+  const saved = localStorage.getItem('yt-theme') || 'light';
   document.documentElement.setAttribute('data-theme', saved);
   const btn = document.getElementById('themeToggle');
   if (btn) btn.textContent = saved === 'dark' ? '🌙' : '☀️';

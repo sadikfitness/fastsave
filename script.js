@@ -2,24 +2,6 @@
 
 'use strict';
 
-/* ── GOOGLE ANALYTICS 4 ────────────────────────────
-   Replace G-XXXXXXXXXX with your actual Measurement ID
-   from https://analytics.google.com
-   ─────────────────────────────────────────────────── */
-(function() {
-  const GA_ID = 'G-60LB7YXXPC';
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  document.head.appendChild(script);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', GA_ID, { anonymize_ip: true });
-})();
-/* ─────────────────────────────────────────────────── */
-
 // ── TOOL DATABASE (for search) ──────────────────
 const TOOLS = [
   {name:'YouTube Tag Generator',icon:'<i class="ph ph-tag"></i>',desc:'Generate 30+ SEO tags for any video',url:'tools/tag-generator.html',cat:'video'},
@@ -391,14 +373,46 @@ function showToast(msg, type = 'info', dur = 3000) {
 }
 
 // ── NEWSLETTER ────────────────────────────────────
-function subscribeNL() {
-  const email = document.getElementById('nlEmail')?.value?.trim();
+async function subscribeNL() {
+  const emailInput = document.getElementById('nlEmail');
+  const email = emailInput?.value?.trim();
+  const btn = emailInput?.nextElementSibling; // The subscribe button
+  
   if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
     showToast('⚠️ Enter a valid email address', 'error');
     return;
   }
-  showToast('🎉 Subscribed! Welcome to FastSave.me!', 'success');
-  if (document.getElementById('nlEmail')) document.getElementById('nlEmail').value = '';
+  
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Subscribing...';
+  btn.style.opacity = '0.7';
+  btn.style.pointerEvents = 'none';
+
+  try {
+    // Replace this URL with your actual Formspree, Mailchimp, or ConvertKit webhook URL
+    // Example: https://formspree.io/f/your_id
+    const WebhookURL = "https://formspree.io/f/mwvyqaln";
+    
+    // Simulate API delay for demo if placeholder is not changed
+    if (WebhookURL.includes('PLACEHOLDER')) {
+      await new Promise(r => setTimeout(r, 1000));
+    } else {
+      await fetch(WebhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      });
+    }
+
+    showToast('🎉 Subscribed! Welcome to FastSave.me!', 'success');
+    if (emailInput) emailInput.value = '';
+  } catch (error) {
+    showToast('❌ Subscription failed. Try again.', 'error');
+  } finally {
+    btn.innerHTML = originalText;
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+  }
 }
 
 // ── AI CHAT ───────────────────────────────────────
@@ -1119,7 +1133,104 @@ document.addEventListener('DOMContentLoaded', () => {
   initReviews();
   initCookies();
   initAllToolsPage();
+  initSEO();
+  initPWA();
 });
+
+// ── PROGRESSIVE WEB APP (PWA) ─────────────────────
+function initPWA() {
+  const isToolPage = window.location.pathname.includes('/tools/');
+  const manifestPath = isToolPage ? '../manifest.json' : './manifest.json';
+  const swPath = isToolPage ? '../sw.js' : './sw.js';
+
+  if (!document.querySelector('link[rel="manifest"]')) {
+    const manifestLink = document.createElement('link');
+    manifestLink.rel = 'manifest';
+    manifestLink.href = manifestPath;
+    document.head.appendChild(manifestLink);
+    
+    const themeMeta = document.createElement('meta');
+    themeMeta.name = 'theme-color';
+    themeMeta.content = '#8b5cf6';
+    document.head.appendChild(themeMeta);
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(swPath).catch(() => {});
+  }
+}
+
+// ── DYNAMIC SEO & CLEANUP (Phase 5) ───────────────
+function initSEO() {
+  // 1. Clean up spam affiliate links and malicious ad networks globally
+  document.querySelectorAll('a[href*="lkeh.pro"], a[href*="reffpa.com"]').forEach(el => el.remove());
+  document.querySelectorAll('script[src*="profitablecpmratenetwork"], script[src*="ferocitycandour"]').forEach(s => s.remove());
+  
+  document.querySelectorAll('.related-box').forEach(box => {
+    if (box.innerHTML.includes('Recommended Partners')) {
+      box.remove();
+    }
+  });
+
+  // 1.5 Remove all ad containers completely from the UI
+  document.querySelectorAll('.ad-container').forEach(ad => {
+    ad.remove();
+  });
+
+  // 2. Inject Dynamic Breadcrumb Schema and Tool Content
+  if (window.location.pathname.includes('/tools/') && !window.location.pathname.includes('all-tools.html')) {
+    const url = window.location.href;
+    
+    // Find current tool from TOOLS array
+    const currentPath = window.location.pathname;
+    const currentTool = TOOLS.find(t => currentPath.includes(t.url.split('/').pop()));
+    const toolName = currentTool ? currentTool.name : document.title.split('—')[0].trim();
+    const toolDesc = currentTool ? currentTool.desc : 'Use this free YouTube tool to optimize your channel and grow faster.';
+    
+    // Inject Breadcrumb Schema
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fastsave.me/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://fastsave.me/tools/all-tools.html" },
+        { "@type": "ListItem", "position": 3, "name": toolName, "item": url }
+      ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    // 3. Inject Dynamic SEO Content (How to Use) if not present
+    const layoutMain = document.querySelector('.tool-layout > div:first-child');
+    if (layoutMain && !document.body.innerHTML.includes('How to Use')) {
+      const seoPanel = document.createElement('div');
+      seoPanel.className = 'panel';
+      seoPanel.style.marginTop = '20px';
+      seoPanel.innerHTML = `
+        <h2>📖 How to Use ${toolName}</h2>
+        <p style="color:var(--t2); font-size:0.95rem; margin-top:8px;">${toolDesc} This tool is designed specifically for YouTube creators to save time and optimize their workflow. Follow these simple steps:</p>
+        <ol style="list-style:decimal;padding-left:20px;color:var(--t2);line-height:1.9;font-size:.9rem;margin-top:12px;">
+          <li>Enter the required information (like a YouTube Video URL, Channel ID, or Keyword) into the input box above.</li>
+          <li>Click the action button and our system will process the request securely in real-time.</li>
+          <li>Review the results. You can easily copy the data or download the generated assets directly to your device!</li>
+        </ol>
+        <div style="margin-top:18px;padding:14px;background:var(--bg0);border-radius:8px;font-size:0.85rem;border:1px solid var(--b1);color:var(--t2);">
+          <strong>Why use ${toolName}?</strong> It is a 100% free, browser-based utility that requires no software installation or account sign-ups. FastSave.me tools are fully optimized for mobile devices and strictly respect user privacy.
+        </div>
+      `;
+      // Insert right before the FAQ panel if it exists, otherwise at the end
+      const faqPanel = Array.from(layoutMain.querySelectorAll('.panel')).find(p => p.innerHTML.includes('Frequently Asked Questions'));
+      if (faqPanel) {
+        layoutMain.insertBefore(seoPanel, faqPanel);
+      } else {
+        layoutMain.appendChild(seoPanel);
+      }
+    }
+  }
+}
 
 
 

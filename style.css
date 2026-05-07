@@ -1,4 +1,4 @@
-﻿/* ══════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════
    FastSave.me — Pro Max CSS  (Complete Rebuild)
    ══════════════════════════════════════════════════ */
 
@@ -968,6 +968,26 @@ textarea.finput{resize:vertical;min-height:100px;line-height:1.6}
   .footer-grid{grid-template-columns:1fr}
   .hero-badge{font-size:.74rem}
   .wrap{padding:0 16px}
+  
+  /* Thumb-Friendly Mobile UX Enhancements */
+  .tool-btn, .df-btn, .nl-form button, .search-row button {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    min-height: 48px; /* Touch target minimum size */
+  }
+  .finput, .search-row input, .nl-form input {
+    padding: 14px 18px;
+    font-size: 1rem; /* Prevents auto-zoom on iOS */
+    min-height: 48px;
+  }
+  .nav-links.open {
+    padding: 24px;
+    gap: 12px;
+  }
+  .nav-links.open .nav-a {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
 }
 
 /* ── API MODAL ────────────────────────────────── */

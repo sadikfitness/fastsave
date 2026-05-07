@@ -29,6 +29,18 @@ const YTAPI = {
     const url = new URL(`${this.BASE}/${endpoint}`);
     Object.entries({ ...params, key }).forEach(([k, v]) => url.searchParams.set(k, v));
 
+    // Caching logic (saves YouTube API quota)
+    const cacheKey = 'yt_' + url.toString();
+    const cachedStr = sessionStorage.getItem(cacheKey);
+    if (cachedStr) {
+      try {
+        const cachedData = JSON.parse(cachedStr);
+        if (Date.now() - cachedData.timestamp < 3600000) { // 1 hour cache
+          return cachedData.data;
+        }
+      } catch (e) {}
+    }
+
     const res = await fetch(url.toString());
     const data = await res.json();
 
@@ -38,6 +50,9 @@ const YTAPI = {
       if (data.error.code === 400) throw new YTError('BAD_REQ', 'Bad request: ' + msg);
       throw new YTError('API_ERR', msg);
     }
+
+    // Save to Cache
+    try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data })); } catch (e) {}
     return data;
   },
 
@@ -197,7 +212,18 @@ function closeApiModal() {
   document.getElementById('apiModal')?.classList.remove('open');
 }
 
+function openApiModal() {
+  const modal = document.getElementById('apiModal');
+  if (modal) {
+    modal.classList.add('open');
+    const input = document.getElementById('apiKeyInput');
+    if (input) input.value = YTAPI.getKey();
+  }
+}
 
+function closeApiModal() {
+  document.getElementById('apiModal')?.classList.remove('open');
+}
 
 /* ─── API REQUIRED GUARD ───────────────────────────── */
 function requireApiKey() {

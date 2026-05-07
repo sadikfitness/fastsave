@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://fastsave.me/sitemap.xml
-
-# Block common bot traps / unnecessary crawling
-Disallow: /.git/
-Disallow: /node_modules/

@@ -1,0 +1,21 @@
+{
+  "name": "FastSave.me - YouTube Tools",
+  "short_name": "FastSave",
+  "description": "100+ Free YouTube Creator Tools for SEO, Growth, and Analytics.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#8b5cf6",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

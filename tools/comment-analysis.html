@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="../favicon.png" />
@@ -36,28 +36,28 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><span class="logo-icon">▶</span><span class="logo-text">YT<span class="logo-accent">Master</span></span><span class="logo-badge">FREE</span></a><div class="nav-menu" id="navMenu"><a href="../index.html" class="nav-link">Home</a><a href="all-tools.html" class="nav-link active">Browse Tools</a></div><div class="nav-actions"><a href="all-tools.html" class="btn-primary-sm">All Tools 🚀</a></div><button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button></div></nav>
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><span class="logo-icon">?</span><span class="logo-text">YT<span class="logo-accent">Master</span></span><span class="logo-badge">FREE</span></a><div class="nav-menu" id="navMenu"><a href="../index.html" class="nav-link">Home</a><a href="all-tools.html" class="nav-link active">Browse Tools</a></div><div class="nav-actions"><a href="all-tools.html" class="btn-primary-sm">All Tools ??</a></div><button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button></div></nav>
     <div class="tool-page-wrapper">
-        <div class="container" style="padding-top:16px;"><div class="ad-placeholder leaderboard">📢 Advertisement (728×90)</div></div>
-        <div class="tool-page-hero"><div class="container"><div class="tool-breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="all-tools.html">Tools</a> <span>›</span> Comment Sentiment Analysis</div><h1 class="tool-page-title">💬 Comment Sentiment Analysis</h1><p class="tool-page-desc">Analyze the sentiment of YouTube comments to understand audience reactions.</p></div></div>
+        <div class="container" style="padding-top:16px;"><div class="ad-placeholder leaderboard">?? Advertisement (728�90)</div></div>
+        <div class="tool-page-hero"><div class="container"><div class="tool-breadcrumb"><a href="../index.html">Home</a> <span>�</span> <a href="all-tools.html">Tools</a> <span>�</span> Comment Sentiment Analysis</div><h1 class="tool-page-title">?? Comment Sentiment Analysis</h1><p class="tool-page-desc">Analyze the sentiment of YouTube comments to understand audience reactions.</p></div></div>
         <div class="tool-page-body"><div class="container"><div class="tool-main-layout">
             <div>
                 <div class="tool-panel">
                     <h2><i class="ph ph-chat-circle-text"></i> Comment Sentiment Analysis</h2>
                     <div class='tool-input-group'><label for='videoUrl'>YouTube Video URL</label><input type='text' id='videoUrl' placeholder='https://youtube.com/watch?v=...'></div>
                     <div id="commentError"></div>
-                    <button class="tool-submit" id="commentBtn" onclick="analyzeComments()">💬 Analyze Comments</button>
+                    <button class="tool-submit" id="commentBtn" onclick="analyzeComments()">?? Analyze Comments</button>
                     <div class="tool-result" id="commentResult" style="margin-top:20px;"><div class="result-box" style="min-height:120px;"></div></div>
                 </div>
-                <div class="in-content-ad" style="margin-top:24px;"><div class="ad-placeholder rectangle">📢 Advertisement (300×250)</div></div>
+                <div class="in-content-ad" style="margin-top:24px;"><div class="ad-placeholder rectangle">?? Advertisement (300�250)</div></div>
             </div>
             <div class="tool-sidebar">
-                <div class="sidebar-ad-box"><div class="ad-placeholder" style="min-height:250px;flex-direction:column;"><span>📢 Advertisement</span><span style="font-size:0.72rem;">(300×250)</span></div></div>
-                <div class="related-tools"><h3>🔗 Related Tools</h3><a href='channel-audit.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Channel Audit</span></a><a href='rank-checker.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Rank Checker</span></a><a href='seo-score-checker.html' class='related-tool-item'><span class='ri-icon'>🔗</span><span>Seo Score Checker</span></a></div>
+                <div class="sidebar-ad-box"><div class="ad-placeholder" style="min-height:250px;flex-direction:column;"><span>?? Advertisement</span><span style="font-size:0.72rem;">(300�250)</span></div></div>
+                <div class="related-tools"><h3>?? Related Tools</h3><a href='channel-audit.html' class='related-tool-item'><span class='ri-icon'>??</span><span>Channel Audit</span></a><a href='rank-checker.html' class='related-tool-item'><span class='ri-icon'>??</span><span>Rank Checker</span></a><a href='seo-score-checker.html' class='related-tool-item'><span class='ri-icon'>??</span><span>Seo Score Checker</span></a></div>
             </div>
         </div></div></div>
     </div>
-    <footer class="footer"><div class="container"><div class="footer-bottom"><p>© 2024 FastSave.me. All rights reserved.</p><div class="footer-links"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></div></footer>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>� 2024 FastSave.me. All rights reserved.</p><div class="footer-links"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></div></div></div></footer>
     <script src="../script.js"></script>
 <script src="../api.js"></script>
     <script>
@@ -68,15 +68,16 @@
         const btn = document.getElementById('commentBtn');
         showLoading(btn, 'Processing...');
         setTimeout(() => {
-            hideLoading(btn, '💬 Analyze Comments');
+            hideLoading(btn, '?? Analyze Comments');
             const resDiv = document.getElementById('commentResult');
-            if(resDiv) { resDiv.querySelector('.result-box').innerHTML = '<p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">✅ Analysis complete! Results have been generated based on the provided input. In a production version, this tool would connect to YouTube API for real-time data.<br><br>📊 <strong>Sample Result:</strong> Your content shows strong potential. Optimize your titles, descriptions, and posting frequency for maximum growth. Use FastSave.me\'s other tools to fine-tune your strategy.</p>'; resDiv.classList.add("show"); }
+            if(resDiv) { resDiv.querySelector('.result-box').innerHTML = '<p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.7;">? Analysis complete! Results have been generated based on the provided input. In a production version, this tool would connect to YouTube API for real-time data.<br><br>?? <strong>Sample Result:</strong> Your content shows strong potential. Optimize your titles, descriptions, and posting frequency for maximum growth. Use FastSave.me\'s other tools to fine-tune your strategy.</p>'; resDiv.classList.add("show"); }
             hideError('commentError');
         }, 2000);
     }
     </script>
 </body>
 </html>
+
 
 
 
